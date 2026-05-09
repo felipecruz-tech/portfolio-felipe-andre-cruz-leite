@@ -1,6 +1,5 @@
 # Felipe André Cruz Leite
-> Estudante Tecnólogo em Análise e Desenvolvimento de Sistemas
- 
+> 💻 Desenvolvedor em formação | Estudante de Análise e Desenvolvimento de Sistemas
 ---
  
 ### 📫 Contato & Redes Sociais
