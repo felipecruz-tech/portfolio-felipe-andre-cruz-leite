@@ -1,5 +1,5 @@
 # Felipe André Cruz Leite
-> Estudante de Tecnólogo em Análise e Desenvolvimento de Sistemas
+> Estudante Tecnólogo em Análise e Desenvolvimento de Sistemas
  
 ---
  
