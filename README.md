@@ -16,7 +16,8 @@ Apaixonado por computação e tecnologia, busco constantemente evoluir minhas ha
 
 💻 Hard Skills: Python, Java, SQL, HTML, Microsoft Azure, AWS, Google Cloud, lógica de programação, banco de dados relacionais, desenvolvimento backend, modelagem de processos e fundamentos de desenvolvimento de sistemas.
 
-🧠 Soft Skills: Pensamento analítico, comunicação assertiva, trabalho em equipe, organização, proatividade e facilidade de aprendizado.   vb 
+🧠 Soft Skills: Pensamento analítico, comunicação assertiva, trabalho em equipe, organização, proatividade e facilidade de aprendizado.  
+
 ---
  
 ### 🛠 Minhas Ferramentas Favoritas
