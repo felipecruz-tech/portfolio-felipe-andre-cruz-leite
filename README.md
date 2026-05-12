@@ -52,11 +52,6 @@ Apaixonado por computação e tecnologia, busco constantemente evoluir minhas ha
 | :--- | :--- | :---: |
 | **MVP+ Gerador de QRCODE** | WebApp para criação de QRCODE's inclusivos e customizados. | [Ver Projeto](./projeto-mvp-qrcode/) |
 | **A Corrida do Prompt** | Projeto educacional focado no domínio de técnicas de engenharia de prompts para comunicação eficiente com modelos de linguagem (LLMs), visando respostas mais precisas e otimizadas. | [Ver Projeto](./projeto-a-corrida-do-prompt/) |
- 
+| **Laboratório de Classificação Visual** | Projeto prático de IA utilizando o Teachable Machine para demonstrar como conjuntos de dados enviesados influenciam decisões algorítmicas. A atividade explora classificação visual, erros de inferência causados por estereótipos e os impactos éticos e sociais do viés em modelos de IA. | [Ver Projeto](./projeto-laboratório-de-classificação-visual/) |
 ---
  
-### 🏗 Estrutura do Repositório
-Abaixo, a organização deste repositório para facilitar a navegação:
- 
-- `root/`: Arquivo de apresentação principal.
-- `/projeto-nome/`: Pasta contendo o código-fonte, documentação e o README específico do projeto acadêmico.
