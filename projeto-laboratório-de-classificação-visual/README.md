@@ -8,7 +8,7 @@ Desenvolvido como parte dos estudos de **Inteligência Artificial e Ética**, o 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-* **Ferramenta de Treinamento:** Teachable Machine (Google)
+* **Ferramenta de Treinamento:** Teachable Machine
 * **Funcionalidade:** Classificação Visual em tempo real
 * **Conceitos Aplicados:** Machine Learning, Prompt Engineering, Ética de Dados e Human-in-the-loop.
 
@@ -29,4 +29,4 @@ O experimento confirmou a fragilidade de modelos treinados com baixa diversidade
 4. **Memorial de Impacto:** Documentação das consequências éticas e propostas de mitigação.
 
 ---
-[Voltar ao início](https://github.com/seu-usuario)
+[Voltar ao início](https://github.com/felipecruz-tech)
