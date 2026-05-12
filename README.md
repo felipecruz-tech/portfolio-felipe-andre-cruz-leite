@@ -50,9 +50,11 @@ Apaixonado por computação e tecnologia, busco constantemente evoluir minhas ha
 #### 🤖 Inteligência Artificial
 | Projeto | Descrição | Link |
 | :--- | :--- | :---: |
-| **MVP+ Gerador de QRCODE** | WebApp para criação de QRCODE's inclusivos e customizados. | [Ver Projeto](./projeto-mvp-qrcode/) |
 | **A Corrida do Prompt** | Projeto focado no domínio de técnicas de engenharia de prompts para comunicação eficiente com modelos de linguagem (LLMs), visando respostas mais precisas e otimizadas. | [Ver Projeto](./projeto-a-corrida-do-prompt/) |
-| **Laboratório de Classificação Visual** | Projeto prático de IA utilizando o Teachable Machine para demonstrar como conjuntos de dados enviesados influenciam decisões algorítmicas. A atividade explora classificação visual, erros de inferência causados por estereótipos e os impactos éticos e sociais do viés em modelos de IA. | [Ver Projeto](./projeto-laboratório-de-classificação-visual/) |
+| **Laboratório de Classificação Visual** | Projeto prático de IA utilizando o Teachable Machine para demonstrar como conjuntos de dados enviesados influenciam decisões algorítmicas. | [Ver Projeto](./projeto-laboratório-de-classificação-visual/) |
 | **Batalha de Modelos & Engenharia de Prompt (XML)** | Projeto experimental de Prompt Engineering voltado à análise comparativa entre diferentes LLMs, avaliando precisão, conformidade com prompts estruturados em XML e desempenho na geração de páginas Front-end em HTML e CSS. | [Ver Projeto](./projeto-batalha-de-modelos-e-engenharia-de-prompt/) |
+| **Engenharia Reversa** |Projeto de engenharia reversa assistida por IA utilizando o Google AI Studio para reconstrução de aplicações web. | [Ver Projeto~](./projeto-engenharia-reversa/) |
+| **MVP+ Gerador de QRCODE** | WebApp para criação de QRCODE's inclusivos e customizados. | [Ver Projeto](./projeto-mvp-qrcode/) |
+
 ---
  
