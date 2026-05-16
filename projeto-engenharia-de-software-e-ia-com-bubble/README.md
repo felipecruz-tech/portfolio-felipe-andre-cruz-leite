@@ -1,51 +1,53 @@
-# 💼 Fluxo de Orçamento — Engenharia de Software com IA e Bubble.io
+# 🌐 Sistema de Orçamentos — Ambiente de Homologação (Bubble.io)
 
 ## 📝 Descrição do Projeto
-Este projeto consiste no desenvolvimento de uma aplicação web de gestão de orçamentos utilizando a plataforma **Bubble.io** com suporte de Inteligência Artificial como acelerador de desenvolvimento. O objetivo principal foi aplicar conceitos de Engenharia de Software em um ambiente low-code, garantindo organização, segurança, governança e boas práticas de desenvolvimento.
+Este repositório documenta e estrutura o **Sistema de Orçamentos**, uma aplicação robusta desenvolvida na plataforma No-Code **Bubble.io**. O sistema foi projetado como parte prática do laboratório da disciplina de **Desenvolvimento No-Code / Low-Code**, funcionando como um ecossistema ágil para o gerenciamento de clientes, controle de escopos comerciais e geração dinâmica de propostas financeiras.
 
-Desenvolvido como atividade acadêmica da disciplina de **Engenharia de Software e Aplicações com IA**, o sistema permite acompanhar orçamentos, visualizar status de propostas e realizar gerenciamento básico de clientes e processos comerciais. Durante o projeto, foram aplicados conceitos relacionados à modelagem de dados, workflows, regras de privacidade, responsividade e otimização de desempenho em aplicações Bubble.
-
-<img width="1351" height="525" alt="image" src="https://github.com/user-attachments/assets/1f7b3052-61e0-4ea2-a9ae-aa9d6b806259" />
-
-*Figura 1: Painel principal do sistema de gerenciamento de orçamentos desenvolvido no Bubble.io.*
+Este README reflete a arquitetura da aplicação implantada e acessível para validação no ambiente de testes:
+👉 **URL do App (Para visualização do teste):** https://felipewilfred-57047.bubbleapps.io/version-test?debug_mode=true
 
 ---
 
-## 🌐 Acesso ao Projeto
-🔗 **Versão de Teste:**  
-https://gabrielmarcolinodeoliveira-68151.bubbleapps.io/version-test?debug_mode=true
+## 🚀 Funcionalidades Chave
+* **Autenticação Segura:** Módulo nativo de gerenciamento de sessões com criptografia e hash de senhas gerenciado internamente pela plataforma.
+* **Painel de Clientes:** Cadastro e listagem estruturada de empresas, contatos, e-mails e telefones com DDD.
+* **Emissor de Orçamentos:** Criação de escopos comerciais com definição de títulos, detalhamento descritivo e datas de validade.
+* **Cálculo Dinâmico de Itens:** Módulo filho conectado ao orçamento para inserção de múltiplos itens com multiplicação automática de subtotal ($\text{quantidade} \times \text{preço unitário}$).
 
 ---
 
-## 🚀 Tecnologias Utilizadas
-* **Plataforma:** Bubble.io
-* **Área:** Engenharia de Software e Inteligência Artificial
-* **Conceitos:** Low-Code, Workflows e Governança
-* **Recursos:** Responsividade, autenticação e persistência de dados
-* **Boas Práticas:** Privacy Rules, Option Sets e otimização de workflows
+## 📊 Arquitetura do Banco de Dados (Data Types)
+A modelagem relacional segue rigorosamente os padrões de engenharia de software para garantir a máxima performance e evitar a degradação do sistema.
 
-## 📊 Resultados e Aprendizados
-O projeto proporcionou experiência prática no desenvolvimento de sistemas utilizando plataformas low-code aliadas à Inteligência Artificial.
+### Tabelas Principais
+1. **Usuário (`User`):** Armazena `id`, `nome`, `email`, `senha` e a data de criação.
+2. **Cliente (`Cliente`):** Vinculado ao usuário que o cadastrou (`criador`), contendo dados cadastrais corporativos.
+3. **Orçamento (`Orcamento`):** Armazena o cabeçalho da proposta, o `valor_total` calculado e o vínculo com a tabela Cliente.
+4. **ItemOrçamento (`ItemOrcamento`):** Armazena as linhas de serviço com chaves estrangeiras apontando para o orçamento pai.
 
-* **Modelagem de Dados:** Estruturação de entidades como Usuário, Cliente e Orçamento.
-* **Segurança:** Implementação de regras de privacidade para isolamento de dados entre usuários.
-* **Governança:** Organização de workflows utilizando cores e documentação interna.
-* **Responsividade:** Ajustes manuais no layout gerado automaticamente pela IA.
-* **Performance:** Otimização de buscas e workflows para reduzir consumo de recursos da plataforma.
+### Regra de Ouro da Modelagem
+* Conforme o rascunho estrutural do banco de dados, **as chaves estrangeiras (FK) residem estritamente no lado filho da relação** (ex: `ItemOrcamento` aponta para `Orcamento`). 
+* Listas de registros dentro da tabela pai foram completamente evitadas para mitigar gargalos de performance caso o volume ultrapasse 100 itens.
 
-Além disso, o projeto ajudou no entendimento de:
-* Limitações de ferramentas low-code com IA;
-* Importância da revisão humana sobre código gerado automaticamente;
-* Estruturação de aplicações escaláveis;
-* Aplicação prática de conceitos de Engenharia de Software.
-
-## 🔧 Como Executar
-1. Acesse o link da aplicação.
-2. Crie um usuário na plataforma.
-3. Cadastre clientes e orçamentos.
-4. Utilize os painéis de acompanhamento de status.
-5. Teste o funcionamento dos workflows e regras de privacidade.
+### Option Sets (Controle de Estados)
+Para evitar o uso de textos fixos (*hardcoded*) e garantir a consistência das regras de negócio, o ciclo de vida das propostas é regido pelo Option Set **`StatusOrcamento`**:
+* `Pendente` | `Aprovado` | `Rejeitado` | `Em revisão` | `Expirado`
 
 ---
 
-[Voltar ao início](https://github.com/gabrielmarcolinooo/portfolio-gabriel-marcolino-de-oliveira)
+## 🔒 Governança e Regras de Privacidade (`Data > Privacy`)
+Para assegurar a conformidade e a segurança multi-inquilino (*multi-tenant*), a aplicação foi blindada diretamente na camada de dados:
+* **Isolamento de Dados:** Configuração de regras estritas onde `This [Data Type]'s Creator is Current User`. Usuários autenticados possuem acesso completo de leitura e busca (`View all fields + Find in searches`) apenas aos registros criados por eles mesmos.
+* **Segurança Padrão:** A política permissiva `Publicly visible` gerada automaticamente pela IA do Bubble foi permanentemente removida antes da publicação do ambiente.
+
+---
+
+## 📉 Mitigação de Dependência de Fornecedor (*Vendor Lock-in*)
+Visando a sustentabilidade do negócio e antecipando cenários de migração para infraestruturas tradicionais, o projeto conta com uma política ativa de **Estratégia de Saída**:
+
+1. **Exposição via Data API:** A Data API REST do Bubble está habilitada nas configurações internas (`Settings > API`), expondo os endpoints para consumo externo em formato JSON estruturado.
+2. **Paginação Segura:** A extração pode ser feita via requisições HTTP autenticadas utilizando paginação com os parâmetros `cursor` e `limit`, permitindo a replicação integral dos dados em bancos externos como o **PostgreSQL**.
+3. **Especificação Funcional para Reescrita:** Toda a lógica contida nos Workflows (regras de privacidade e enums) e as notas internas servem como documentação técnica para guiar uma eventual reconstrução completa utilizando pilhas convencionais como **React** e **Node.js (Express)**.
+
+---
+[Voltar ao início](https://github.com/seu-usuario)
